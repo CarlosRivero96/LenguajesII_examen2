@@ -1,0 +1,44 @@
+READ N
+#
+# Verificamos que N > -1
+PUSH -1
+RVALUE N
+GT
+#
+# Si no es asi, finalizamos y no imprimimos nada
+GOFALSE end
+#
+# Asignamos al resultado el valor inicial de 1
+PUSH 1
+LVALUE result 
+ASSIGN
+#
+# Asignamos al indice el valor inicial de 2
+PUSH 2
+LVALUE i
+ASSIGN 
+#
+# Mientras el indice sea menor o igual a N, nos mantenemos en el ciclo
+loop: RVALUE N 
+RVALUE i 
+LE 
+GOFALSE print
+#
+# Multiplicamos el resultado por el indice actual 
+RVALUE i 
+RVALUE result 
+MUL 
+LVALUE result 
+ASSIGN 
+#
+# Sumamos 1 al indice 
+PUSH 1
+RVALUE i 
+ADD 
+LVALUE i 
+ASSIGN 
+#
+# Pasamos a la siguiente iteracion del ciclo 
+GOTO loop
+print: PRINT result
+end:

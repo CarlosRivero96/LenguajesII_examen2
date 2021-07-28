@@ -1,0 +1,28 @@
+READ N
+RVALUE N
+PUSH -1
+GT
+GOFALSE end
+PUSH 1
+LVALUE result 
+ASSIGN
+PUSH 2
+LVALUE i
+ASSIGN 
+loop: RVALUE i
+RVALUE N 
+LE 
+GOFALSE print
+RVALUE i 
+RVALUE result 
+MUL 
+LVALUE result 
+ASSIGN 
+PUSH 1
+RVALUE i 
+ADD 
+LVALUE i 
+ASSIGN 
+GOTO loop
+print: PRINT result
+end:

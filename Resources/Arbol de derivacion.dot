@@ -1,0 +1,43 @@
+graph {
+    l1      [label= "E1 < E2 (INT)"];
+
+    q1      [label= "E1 ? : E2 (INT)"];
+    q2      [label= "E1 ? : E2 (INT)"];
+    q3      [label= "E1 ? : E2 (Type_Error)"];
+
+    p1      [label= "E1 + E2 (INT)"];
+
+    e1      [label= "E1 !! E2 (INT)"];
+
+    a1      [label= "E1 ∧ E2 (Type_Error)"];
+
+    num1    [label= "42 (INT)"];
+    num2    [label= "69 (INT)"];
+    num3    [label= "7 (INT)"];
+
+    null1   [label= "null (NULL)"];
+    null2   [label= "null (NULL)"];
+    null3   [label= "null (NULL)"];
+
+    true    [label= "true (BOOL)"];
+
+    q1 -- null1;
+    q1 -- num1;
+
+    e1 -- num2;
+
+    p1 -- q1;
+    p1 -- e1;
+
+    q2 -- num3;
+    q2 -- null2;
+
+    l1 -- p1;
+    l1 -- q2;
+
+    a1 -- l1;
+    a1 -- null3;
+
+    q3 -- a1;
+    q3 -- true;
+}

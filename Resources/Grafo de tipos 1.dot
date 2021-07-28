@@ -1,0 +1,41 @@
+digraph {
+    pokebola    [label=< <B>pokebola</B> >];
+    pointer     [label= <pointer>];
+    pokemon     [label=< <B>pokemon</B> >];
+    struct      [label= <struct>];
+    float       [label=< <B>float</B> >];
+    pi          [label= <pi>];
+    ka          [label= <ka>];
+    chu         [label= <chu>];
+    p           [label= <'>];
+    k           [label= <'>];
+    ch          [label= <'>];
+    a           [label= <a>];
+    b           [label= <b>];
+    c           [label= <c>];
+    d           [label= <d>];
+    e           [label= <e>];
+
+    pokebola    ->  pointer;
+    pointer     ->  pokemon;
+    pokemon     ->  struct;
+    
+    struct      ->  p;
+    struct      ->  k;
+    struct      ->  ch;
+
+    p           ->  float;
+    p           ->  pi;
+
+    k           ->  pokebola;
+    k           ->  ka;
+
+    ch          ->  pokebola;
+    ch          ->  chu;
+
+    a           ->  pokemon     [style= dashed];
+    b           ->  pointer     [style= dashed];
+    c           ->  pokebola    [style= dashed];
+    d           ->  float       [style= dashed];
+    e           ->  pokemon     [style= dashed];
+}
