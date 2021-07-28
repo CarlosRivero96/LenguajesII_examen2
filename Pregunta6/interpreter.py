@@ -66,9 +66,9 @@ def lvalue(id):
 def assign():
     if (len(stack) < 2):
         print("\033[91mERROR: \033[0mNo hay suficientes elementos en la pila")
-    elif (type(stack[-1]) is not int and type(stack[-1]) is not bool and len(stack[-1].split()) != 2):
+    elif (type(stack[-1]) is int or type(stack[-1]) is bool or len(stack[-1].split()) != 2):
         print("\033[91mERROR: \033[0mEl valor en el tope de la pila no es un l-value")
-    elif (type(stack[-2]) is not int and type(stack[-2]) is not bool and len(stack[-2].split()) == 2):
+    elif (type(stack[-2]) is not int and type(stack[-2]) is not bool):
         print("\033[91mERROR: \033[0mNo se le puede asignar un l-value a un l-value")
     else:
         lv = stack.pop().split()[1]
@@ -129,7 +129,8 @@ if len(sys.argv) < 2:
 
 with open (sys.argv[1]) as f:
     for line in f:
-        instructions.append(line)
+        if(len(line.split()) > 0):
+            instructions.append(line)
 
 # Añadir los tags
 for line in instructions:
@@ -140,6 +141,7 @@ for line in instructions:
     instPointer += 1
 
 instPointer = 0
+
 # Hacer la corrida
 while(instPointer < len(instructions)):
     line = instructions[instPointer]
